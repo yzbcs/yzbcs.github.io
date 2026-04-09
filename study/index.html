@@ -149,16 +149,13 @@
 </div>
 
 <script>
-    const REPO = 'yzbcs/yzbcs.github.io';
-    const BRANCH = 'master';
-    const RAW_BASE = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/study/`;
-    const PAGE_BASE = `https://${REPO}/blob/${BRANCH}/study/`;
+    const SITE_BASE = 'study/';  // 使用相对路径，避免跨域和被墙问题
 
     let notesData = [];
 
     async function loadData() {
         try {
-            const resp = await fetch(RAW_BASE + 'data.json');
+            const resp = await fetch(SITE_BASE + 'data.json');
             if (!resp.ok) throw new Error('data.json not found');
             const data = await resp.json();
             notesData = data.notes || [];
@@ -245,10 +242,10 @@
             <div class="card-meta">
                 ${(note.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
-            <a href="${RAW_BASE}${note.path}" target="_blank">📄 查看源文件</a>
+            <a href="${SITE_BASE}${note.path}" target="_blank">📄 查看源文件</a>
             <div class="date">${note.created}</div>
         `;
-        document.getElementById('detailIframe').src = RAW_BASE + note.path;
+        document.getElementById('detailIframe').src = SITE_BASE + note.path;
     }
 
     // 搜索
