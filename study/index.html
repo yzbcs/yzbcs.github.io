@@ -149,13 +149,11 @@
 </div>
 
 <script>
-    const SITE_BASE = 'study/';  // 使用相对路径，避免跨域和被墙问题
-
     let notesData = [];
 
     async function loadData() {
         try {
-            const resp = await fetch(SITE_BASE + 'data.json');
+            const resp = await fetch('data.json');
             if (!resp.ok) throw new Error('data.json not found');
             const data = await resp.json();
             notesData = data.notes || [];
@@ -164,7 +162,7 @@
             renderNoteList('all');
         } catch (e) {
             document.getElementById('noteList').innerHTML =
-                '<div class="error">加载失败: ' + e.message + '<br>请确认 GitHub Pages 已启用，地址：<a href="https://' + REPO + '" style="color:var(--accent)">' + REPO + '</a></div>';
+                '<div class="error">加载失败: ' + e.message + '</div>';
         }
     }
 
@@ -242,10 +240,10 @@
             <div class="card-meta">
                 ${(note.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
-            <a href="${SITE_BASE}${note.path}" target="_blank">📄 查看源文件</a>
+            <a href="${note.path}" target="_blank">📄 查看源文件</a>
             <div class="date">${note.created}</div>
         `;
-        document.getElementById('detailIframe').src = SITE_BASE + note.path;
+        document.getElementById('detailIframe').src = note.path;
     }
 
     // 搜索
