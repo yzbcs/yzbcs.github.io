@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "于宗伯"
+title                    : "homepage"
 title_separator          : "-"
 name                     : &name "于宗伯"
-description              : &description "于宗伯的个人主页 - 2026届本科生"
+description              : &description "Natural Language Processing, NorthEastern University"
 url                      : https://yzbcs.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "yzbcs/yzbcs.github.io"
@@ -23,13 +23,13 @@ repository               : "yzbcs/yzbcs.github.io"
 author:
   # Biographic information
   avatar           : "https://avatars.githubusercontent.com/yzbcs"
-  name             : "于宗伯"
+  name             : "Zongbo Yu"
   pronouns         : # example: "she/her"
-  bio              : "2026届本科生"
-  location         :
+  bio              : "Undergraduate student majoring in Computer Science and Technology at China University of Mining and Technology (Beijing)"
+  location         : "Beijing, China"
   employer         :
   uri              :
-  email            :
+  email            : "zongbo_yu@163.com"
 
   # Academic websites
   academia         : # URL

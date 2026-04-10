@@ -241,6 +241,7 @@
                 ${(note.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
             <a href="${note.path}" target="_blank">📄 查看源文件</a>
+            <a href="${note.path}" download="${note.title}.html">⬇️ 下载</a>
             <div class="date">${note.created}</div>
         `;
         document.getElementById('detailIframe').src = note.path;
