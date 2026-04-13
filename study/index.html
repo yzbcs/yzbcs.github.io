@@ -1,3 +1,6 @@
+---
+layout: none
+---
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -149,11 +152,16 @@
 </div>
 
 <script>
+    const REPO = 'yzbcs/yzbcs.github.io';
+    const BRANCH = 'master';
+    const RAW_BASE = `https://raw.githubusercontent.com/${REPO}/${BRANCH}/study/`;
+    const PAGE_BASE = `https://${REPO}/blob/${BRANCH}/study/`;
+
     let notesData = [];
 
     async function loadData() {
         try {
-            const resp = await fetch('data.json');
+            const resp = await fetch(RAW_BASE + 'data.json');
             if (!resp.ok) throw new Error('data.json not found');
             const data = await resp.json();
             notesData = data.notes || [];
@@ -162,7 +170,7 @@
             renderNoteList('all');
         } catch (e) {
             document.getElementById('noteList').innerHTML =
-                '<div class="error">加载失败: ' + e.message + '</div>';
+                '<div class="error">加载失败: ' + e.message + '<br>请确认 GitHub Pages 已启用，地址：<a href="https://' + REPO + '" style="color:var(--accent)">' + REPO + '</a></div>';
         }
     }
 
@@ -240,11 +248,10 @@
             <div class="card-meta">
                 ${(note.tags || []).map(t => `<span class="tag">${t}</span>`).join('')}
             </div>
-            <a href="${note.path}" target="_blank">📄 查看源文件</a>
-            <a href="${note.path}" download="${note.title}.html">⬇️ 下载</a>
+            <a href="${RAW_BASE}${note.path}" target="_blank">📄 查看源文件</a>
             <div class="date">${note.created}</div>
         `;
-        document.getElementById('detailIframe').src = note.path;
+        document.getElementById('detailIframe').src = RAW_BASE + note.path;
     }
 
     // 搜索
