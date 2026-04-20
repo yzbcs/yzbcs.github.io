@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日推送 · 2026年04月20日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #eef0f5; font-family: -apple-system, 'PingFang SC', 'Segoe UI', sans-serif; padding: 30px 16px; }
+
+.email-wrap { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 32px rgba(0,0,0,0.10); }
+
+/* ── Header ── */
+.header { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); padding: 28px 28px 20px; color: #fff; }
+.header .eyebrow { font-size: 11px; letter-spacing: 3px; color: #7ecfff; text-transform: uppercase; margin-bottom: 8px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+.header .meta { font-size: 12px; color: #a0b8cc; margin-bottom: 14px; }
+.pills { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 13px; font-size: 11px; color: #d0e8ff; }
+.pill b { color: #7ecfff; }
+
+/* ── 两栏布局 ── */
+.content-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.col-header-row th { width: 50%; text-align: left; padding: 14px 14px 10px; background: #fff; border-bottom: 1px solid #e8eaef; }
+.col-header-arxiv { color: #3b5bdb; font-size: 13px; font-weight: 700; border-bottom: 2px solid #3b5bdb; display: inline-block; padding-bottom: 2px; }
+.col-header-xhs { color: #FF2442; font-size: 13px; font-weight: 700; border-bottom: 2px solid #FF2442; display: inline-block; padding-bottom: 2px; }
+
+/* 卡片行 */
+.card-row td { width: 50%; vertical-align: top; padding: 12px 14px; border-top: 1px solid #e8eaef; }
+.card-row td:first-child { border-right: 1px solid #e8eaef; }
+.rest-cell { padding: 40px 14px; text-align: center; color: #bbb; font-size: 13px; font-style: italic; }
+
+/* ── Cards ── */
+.card { border: 1px solid #e8eaef; border-radius: 8px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+.card-inner { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.card-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #f3f4f6; color: #555; }
+.card-date { font-size: 10px; color: #aaa; white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.45; }
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { text-decoration: underline; }
+.card-byline { font-size: 11px; color: #999; }
+
+.summary { background: #f4f6ff; border-left: 2px solid #3b5bdb; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary-xhs { background: #fff5f6; border-left: 2px solid #FF2442; border-radius: 0 4px 4px 0; padding: 6px 10px; font-size: 11px; color: #333; line-height: 1.6; margin-top: auto; }
+.summary .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #3b5bdb; display: block; margin-bottom: 2px; }
+.summary-xhs .label { font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #FF2442; display: block; margin-bottom: 2px; }
+
+.card-links { display: flex; gap: 4px; flex-wrap: wrap; margin-top: auto; }
+.btn { font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 5px; text-decoration: none; }
+.btn-arxiv { background: #b31b1b; color: #fff; }
+.btn-pdf { background: #1a73e8; color: #fff; }
+.btn-xhs { background: #FF2442; color: #fff; }
+
+/* ── details/summary 展开收起 ── */
+details { border-top: 1px solid #eef0f8; background: #fafbff; }
+details summary { display: flex; align-items: center; gap: 6px; padding: 8px 12px; cursor: pointer; font-size: 11px; font-weight: 600; color: #3b5bdb; list-style: none; user-select: none; }
+details summary::-webkit-details-marker { display: none; }
+details summary::before { content: "▶"; font-size: 9px; }
+details[open] summary::before { content: "▼"; }
+details summary:hover { background: #eef2ff; }
+.detail-body { padding: 8px 12px 12px; font-size: 11px; color: #444; line-height: 1.7; white-space: pre-wrap; border-top: 1px solid #eef0f8; }
+.detail-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3b5bdb; display: block; margin-bottom: 4px; }
+
+/* ── Footer ── */
+.footer { background: #f8f9ff; border-top: 1px solid #eaecf0; padding: 16px 24px; text-align: center; font-size: 11px; color: #aaa; }
+.footer a { color: #3b5bdb; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="email-wrap">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="eyebrow">📬 Daily Digest</div>
+    <h1>今日推送</h1>
+    <div class="meta">2026年04月20日 · 星期一</div>
+    <div class="pills">
+      
+      <div class="pill">📄 arXiv <b>10</b> 篇</div>
+      
+      
+      <div class="pill">关键词：LLM Agent · Agent · Skill · Skill Learning · Skill Retrieval · Skill Refinement · Skill Evolution · openclaw</div>
+    </div>
+  </div>
+
+  <!-- 两栏并排 -->
+  <table class="content-table">
+    <!-- 表头 -->
+    <tr class="col-header-row">
+      <th>
+        &nbsp;&nbsp;<span class="col-header-arxiv">📄 arXiv 论文</span>
+        
+      </th>
+      <th>
+        &nbsp;&nbsp;<span class="col-header-xhs">📕 小红书笔记</span>
+      </th>
+    </tr>
+
+    
+      
+    
+
+    
+    
+
+    
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">Agent</span>
+                    
+                    <span class="tag">Skill</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.15709v1" target="_blank">Bilevel Optimization of Agent Skills via Monte Carlo Tree Search</a>
+                </div>
+                <div class="card-byline">Chenyi Huang, Haoting Zhang, Jingxu Xu, Zeyu Zheng, Yunduan Lin</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  论文提出基于MCTS的双层优化方法系统性优化LLM智能体的Skill设计。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.15709v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.15709v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文聚焦LLM智能体Skill设计的优化挑战，指出Skill作为结构化指令、工具和资源的集合，对智能体任务性能有实质性影响。研究提出双层优化框架，利用蒙特卡洛树搜索（MCTS）同时优化Skill的多个组成要素。该方法解决了Skill设计中指令、工具分配的联合优化难题，在多个基准上验证了Skill设计对智能体性能的显著提升效果。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.15840v1" target="_blank">CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution</a>
+                </div>
+                <div class="card-byline">Shidong Yang, Ziyu Ma, Tongwen Huang, Yiming Hu, Yong Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  CoEvolve提出LLM智能体与数据的闭环协同进化训练框架，通过交互驱动的闭环学习提升智能体能力。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.15840v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.15840v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究了传统静态数据分布下强化学习训练LLM智能体的局限性，提出CoEvolve框架实现智能体与数据的双向协同进化。该框架通过闭环交互驱动训练，使LLM智能体能够适应不断演变的行为和复杂环境交互。核心创新在于构建了智能体-数据 mutual evolution的训练范式，有效解决了静态分布下的能力覆盖不足问题。实验验证了其在复杂环境交互任务中的显著性能提升。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-16</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.15505v1" target="_blank">PolicyBank: Evolving Policy Understanding for LLM Agents</a>
+                </div>
+                <div class="card-byline">Jihye Choi, Jinsung Yoon, Long T. Le, Somesh Jha, Tomas Pfister</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  PolicyBank提出LLM智能体通过交互协同进化策略理解的框架。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.15505v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.15505v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文研究LLM智能体在组织策略约束下的合规性问题，指出自然语言策略规范中不可避免的歧义和逻辑漏洞会导致行为偏离真实需求。核心创新是让智能体通过交互协同进化其策略理解，实现策略规范的动态澄清与对齐。研究在真实场景策略理解任务上验证了方法有效性，为构建可靠的企业级LLM智能体提供了新范式。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">Agent</span>
+                    
+                    <span class="tag">openclaw</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.15715v1" target="_blank">GTA-2: Benchmarking General Tool Agents from Atomic Tool-Use to Open-Ended Workflows</a>
+                </div>
+                <div class="card-byline">Jize Wang, Xuanxuan Liu, Yining Li, Songyang Zhang, Yijun Wang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  GTA-2提出从原子工具使用到开放式工作流的通用工具智能体分层基准。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.15715v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.15715v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出当前工具使用基准与现实需求严重脱节，存在AI生成查询、虚拟工具和有限系统协调等问题。核心贡献是提出GTA-2分层基准，覆盖从原子级工具调用到复杂现实生产力工作流的完整评估谱系。该基准采用真实工具集和人类生成查询，系统评估通用工具智能体能力。实验揭示了当前模型在复杂工作流协调方面的关键差距。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">Skill</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.15771v1" target="_blank">Skill-RAG: Failure-State-Aware Retrieval Augmentation via Hidden-State Probing and Skill Routing</a>
+                </div>
+                <div class="card-byline">Kai Wei, Raymond Li, Xi Zhu, Zhaoqian Xue, Jiaojiao Han</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  Skill-RAG通过隐藏状态探测和Skill路由实现失败感知的检索增强生成。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.15771v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.15771v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对现有RAG系统无法诊断查询-证据错位根本原因的问题，提出Skill-RAG框架。核心创新在于通过隐藏状态探测识别失败状态，并基于Skill路由机制实现自适应检索增强。该方法将后检索失败从简单重试转变为结构性诊断，解决了查询-证据对齐的根本问题。实验表明在复杂知识密集型任务中显著优于传统自适应检索方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.15774v1" target="_blank">MemEvoBench: Benchmarking Memory MisEvolution in LLM Agents</a>
+                </div>
+                <div class="card-byline">Weiwei Xie, Shaoxiong Guo, Fan Zhang, Tian Xia, Xue Yang</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  MemEvoBench提出LLM智能体记忆误演化问题的标准化评估框架。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.15774v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.15774v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文首次系统研究LLM智能体持久记忆带来的安全风险——记忆误演化问题。当记忆积累受到污染或偏见时，会触发异常的智能体行为。核心贡献是建立了测量记忆误演化的标准化评估框架，解决了现有评估方法缺乏统一标准的问题。研究揭示了记忆污染对智能体行为的渐进影响机制，为安全部署具身智能体提供重要参考。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">Agent</span>
+                    
+                    <span class="tag">Skill</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.15877v1" target="_blank">Experience Compression Spectrum: Unifying Memory, Skills, and Rules in LLM Agents</a>
+                </div>
+                <div class="card-byline">Xing Zhang, Guanghui Wang, Yanwei Cui, Wei Qiu, Ziyuan Li</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  论文统一LLM智能体的记忆、Skill与规则管理，提出经验压缩谱系框架。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.15877v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.15877v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对LLM智能体在长时域多会话部署中经验管理碎片化问题，指出记忆系统和Skill发现两个领域跨社区引用率不足1%。研究提出统一视角，将记忆、Skill发现和规则提取纳入经验压缩谱系框架。通过对22篇核心论文、1136条引用的分析，揭示了知识可复用性的本质关联，为智能体经验管理提供了统一理论框架。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.16004v1" target="_blank">AgentV-RL: Scaling Reward Modeling with Agentic Verifier</a>
+                </div>
+                <div class="card-byline">Jiazheng Zhang, Ziche Fu, Zhiheng Xi, Wenqing Jing, Mingxu Chai</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  AgentV-RL提出基于Agentic验证器的奖励建模扩展方法。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.16004v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.16004v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文针对验证器在复杂领域面临的错误传播和缺乏外部锚定问题，提出AgentV-RL框架。核心创新是利用Agentic验证器增强奖励建模，通过多步推理验证和外部知识锚定提升可靠性。该方法缓解了中间推理错误导致的假阳性问题，在计算密集和知识密集任务上显著提升了验证准确性。实验表明在复杂推理任务中明显优于传统验证方法。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">LLM Agent</span>
+                    
+                    <span class="tag">Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.16022v1" target="_blank">SocialGrid: A Benchmark for Planning and Social Reasoning in Embodied Multi-Agent Systems</a>
+                </div>
+                <div class="card-byline">Hikaru Shindo, Hanzhao Lin, Lukas Helff, Patrick Schramowski, Kristian Kersting</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  SocialGrid提出评估LLM智能体在具身多智能体环境中社交推理的基准。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.16022v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.16022v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出随着LLM从文本处理器向自主智能体演进，评估其在具身多智能体场景中的社交推理能力变得至关重要。核心贡献是提出SocialGrid环境，灵感来自Among Us，评估LLM智能体的规划、任务执行和社交推理能力。评估揭示即使最强开源模型在社交协作和欺骗检测方面仍有显著不足，为多智能体AI系统研究提供了重要基准。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+      <tr class="card-row">
+        <!-- 左栏：arXiv -->
+        <td>
+          
+            
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-top">
+                  <div class="card-tags">
+                    
+                    <span class="tag">Agent</span>
+                    
+                    
+                  </div>
+                  <span class="card-date">2026-04-17</span>
+                </div>
+                <div class="card-title">
+                  <a href="http://arxiv.org/abs/2604.16205v1" target="_blank">ChemGraph-XANES: An Agentic Framework for XANES Simulation and Analysis</a>
+                </div>
+                <div class="card-byline">Vitor F. Grizzi, Thang Duc Pham, Luke N. Pretzie, Jiayi Xu, Murat Keceli</div>
+                
+                <div class="summary">
+                  <span class="label">💡 一句话总结</span>
+                  ChemGraph-XANES提出用于XANES模拟与分析的Agentic计算框架。
+                </div>
+                
+                <div class="card-links">
+                  <a class="btn btn-arxiv" href="http://arxiv.org/abs/2604.16205v1" target="_blank">arXiv</a>
+                  
+                  <a class="btn btn-pdf" href="https://arxiv.org/pdf/2604.16205v1" target="_blank">PDF</a>
+                  
+                </div>
+              </div>
+              
+              <details>
+                <summary>📋 详细解读</summary>
+                <div class="detail-body"><span class="detail-label">论文解读</span>论文指出计算XANES在大规模应用中的瓶颈主要在于工作流复杂性而非模拟方法本身。核心贡献是提出ChemGraph-XANES Agentic框架，将复杂的多步骤XANES分析流程自动化编排。该框架利用AI智能体协调模拟工具、参数优化和结果解释，显著降低了计算XANES的技术门槛。验证了其在复杂化学系统电子结构分析中的实用价值。</div>
+              </details>
+              
+            </div>
+          
+        </td>
+
+        <!-- 右栏：小红书 -->
+        <td>
+          
+            <div class="rest-cell">—</div>
+          
+        </td>
+      </tr>
+      
+    
+  </table>
+
+  <!-- Footer -->
+  <div class="footer">
+    由 <strong>arxiv-daily</strong> 自动生成 · 每天 12:00 推送<br>
+    <a href="https://github.com/yzbcs/Arxiv-Daily-Digest">GitHub</a>
+  </div>
+
+</div>
+</body>
+</html>
